@@ -12,7 +12,7 @@ class Student_database(models.Model):
 
 # This table holds all the student name and the system they used and the in time and out time.
 class System_database(models.Model):
-    Date = models.DateField(blank = True)
+    Date = models.DateField(auto_now_add=True, blank=True)
     Student_name = models.CharField(max_length = 50)
     Branch = models.CharField(max_length = 10)
     USN = models.CharField(max_length = 11)
