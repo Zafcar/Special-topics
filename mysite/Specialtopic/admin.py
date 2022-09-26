@@ -1,3 +1,5 @@
+from asyncio.windows_events import NULL
+from datetime import datetime
 from django.contrib import admin
 from  django.contrib.auth.models  import  Group
 
@@ -8,15 +10,21 @@ from .models import Student_database, System_database
 # This class is to display all the values in the Student_database table.
 class  Student_databaseAdmin(admin.ModelAdmin):
     list_display=("USN", "Student_name")
-    
+    search_fields = ("USN", )
 
+    
 # This class is to display all the values in the System_database table.
 class  System_databaseAdmin(admin.ModelAdmin):
     list_display=("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
-    # creates a filter to sort by. 
-    list_filter = ("Date",)
+    
+    # creates a filter to sort by and sorts by based on current date.
+    def get_queryset(self, request):
+        
+        queryset = super(System_databaseAdmin, self).get_queryset(request)
+        queryset = queryset.filter(Date = datetime.now())
+        return queryset
 
-
+   
 # This adds both the tables from models.py into admin site for viewing or adding.
 admin.site.register(Student_database, Student_databaseAdmin)
 admin.site.register(System_database, System_databaseAdmin)
