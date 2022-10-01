@@ -9,6 +9,7 @@ from .models import Student_database, System_database
 
 
 # This class is to display all the values in the Student_database table.
+#
 class  Student_databaseAdmin(admin.ModelAdmin):
     list_display=("USN", "Student_name")
     search_fields = ("USN", )
