@@ -7,12 +7,13 @@ from .models import Student_database, System_database
 
 # This class is to display all the values in the Student_database table.
 class  Student_databaseAdmin(admin.ModelAdmin):
-    list_display=("USN", "Student_name")
+    list_display = ("USN", "Student_name")
+    search_fields = ("USN", )
     
 
 # This class is to display all the values in the System_database table.
 class  System_databaseAdmin(admin.ModelAdmin):
-    list_display=("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
+    list_display = ("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
     # creates a filter to sort by. 
     list_filter = ("Date",)
 
