@@ -1,6 +1,7 @@
 from django.contrib import admin
 from  django.contrib.auth.models  import  Group
-from daterange.filters import DateRangeFilter
+from rangefilter.filters import DateRangeFilter
+
 
 
 #new commit here 2
@@ -20,7 +21,7 @@ class  Student_databaseAdmin(admin.ModelAdmin):
 class  System_databaseAdmin(admin.ModelAdmin):
     list_display=("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
     # creates a filter to sort by. 
-    list_filter = ("Date","Branch","System_no",("Date", DateRangeFilter))
+    list_filter = (('Date', DateRangeFilter), "Branch", "System_no")
 
 
 # This adds both the tables from models.py into admin site for viewing or adding.
