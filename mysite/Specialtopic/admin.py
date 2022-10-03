@@ -1,5 +1,11 @@
 from django.contrib import admin
 from  django.contrib.auth.models  import  Group
+from daterange.filters import DateRangeFilter
+
+
+#new commit here 2
+
+#new commit!!!
 
 # this import from models.py file which stores all the sql tables.
 from .models import Student_database, System_database
@@ -7,15 +13,14 @@ from .models import Student_database, System_database
 
 # This class is to display all the values in the Student_database table.
 class  Student_databaseAdmin(admin.ModelAdmin):
-    list_display = ("USN", "Student_name")
-    search_fields = ("USN", )
+    list_display=("USN", "Student_name")
     
 
 # This class is to display all the values in the System_database table.
 class  System_databaseAdmin(admin.ModelAdmin):
-    list_display = ("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
+    list_display=("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
     # creates a filter to sort by. 
-    list_filter = ("Date",)
+    list_filter = ("Date","Branch","System_no",("Date", DateRangeFilter))
 
 
 # This adds both the tables from models.py into admin site for viewing or adding.
