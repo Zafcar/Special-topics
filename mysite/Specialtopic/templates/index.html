@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" contents="IE=edge">
+        <meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>welcome</h1>
+        <form action="#" method ="POST" >
+             {% csrf_token %}
+            <table>
+                <tr>
+                    <td> NAME</td>
+                    <td>
+                        <input type="text" placeholder="Enter name" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>USN</td>
+                   <td> <input type="text" placeholder="Enter usn" name="usn"></td>
+                </tr>
+                <tr>
+                    <td>DEPARTMENT</td>
+                    <td><input type="text" placeholder="Enter branch" name ="branch"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type ="reset">
+                    </td>
+                    <td>
+                        <input type ="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
