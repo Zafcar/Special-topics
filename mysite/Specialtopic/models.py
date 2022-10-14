@@ -9,11 +9,15 @@ from datetime import datetime
 class Student_database(models.Model):
     Student_name = models.CharField(max_length = 50)
     USN = models.CharField(max_length = 11, primary_key=True)
+    
+    def __str__(self):
+        return self.USN
 
 # This table holds all the student name and the system they used and the in time and out time.
 class System_database(models.Model):
     Date = models.DateField(auto_now_add=True, blank=True)
     Student_name = models.CharField(max_length = 50)
+    # Student_name = models.ForeignKey(Student_database, on_delete=models.CASCADE)
 
     # This is list of pre-defined courses.
     courses=(
@@ -36,6 +40,9 @@ class System_database(models.Model):
         ('k2','Kindle2')
     )
 
-    System_no = models.CharField(choices=systems,max_length = 9)
+    System_no = models.CharField(choices=systems, max_length = 9)
     Time_in = models.TimeField()
     Time_out = models.TimeField()
+
+    def __str__(self):
+        return '%s %s %s %s %s %s %s %s %s' % (self.Date, self.Student_name, self.courses, self.Branch, self.USN, self.systems, self.System_no, self.Time_in, self.Time_out)
