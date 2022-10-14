@@ -1,6 +1,7 @@
 from django.contrib import admin
 from  django.contrib.auth.models  import  Group
 from rangefilter.filters import DateRangeFilter
+from import_export.admin import ImportExportMixin
 
 
 
@@ -13,12 +14,12 @@ from .models import Student_database, System_database
 
 
 # This class is to display all the values in the Student_database table.
-class  Student_databaseAdmin(admin.ModelAdmin):
+class  Student_databaseAdmin(ImportExportMixin, admin.ModelAdmin):
     list_display=("USN", "Student_name")
     
 
 # This class is to display all the values in the System_database table.
-class  System_databaseAdmin(admin.ModelAdmin):
+class  System_databaseAdmin(ImportExportMixin, admin.ModelAdmin):
     list_display=("Date", "Student_name", "Branch", "USN", "System_no", "Time_in", "Time_out")
     # creates a filter to sort by. 
     list_filter = (('Date', DateRangeFilter), "Branch", "System_no")

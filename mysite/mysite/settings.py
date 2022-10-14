@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Specialtopic',
     'rangefilter',
+    'import_export',
 ]
 
 MIDDLEWARE = [
