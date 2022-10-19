@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from Specialtopic.models import User
+from Specialtopic.models import Student_database, System_database
 
 
 

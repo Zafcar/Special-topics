@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Specialtopic'
-    
+    'Specialtopic',
+    'rangefilter',
+    'import_export',
 ]
 
 MIDDLEWARE = [
