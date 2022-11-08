@@ -6,5 +6,6 @@ class SpecialtopicConfig(AppConfig):
     name = 'Specialtopic'
 
     def ready(self):
-        from Scheduler import updater_excel
-        updater_excel.start()
+        from Scheduler import job_scheduler
+        job_scheduler.excel_service()
+        job_scheduler.email_service()
