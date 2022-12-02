@@ -12,7 +12,7 @@ def index(request):
         usn = request.POST['usn']
         branch = request.POST['branch']
         # print(name,usn,branch)
-        ins = User(name=name ,usn=usn ,branch=branch)
+        ins = Student_database(Student_name=name ,USN=usn)
         ins.save()
         print("data has been returned to db")
     return render(request,'index.html')
