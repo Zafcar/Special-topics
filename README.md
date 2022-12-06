@@ -27,3 +27,9 @@
 
 ### Type in this code to install the latest version of Django (Internet connection needed!)- `pip install Django`.
 
+### After installing all the required softwares, you can work on it in VS Code(preferred). 
+### Open VS Code and select "Open Folder" and select the code that you've pulled from the GitHub repository or downloaded from GitHub.
+
+### Welcome to editing!
+
+### You can also push your edits through VS Code. Just make sure its working properly before pushing it into the main repo. 
