@@ -19,5 +19,6 @@ from Specialtopic import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app',views.index),
+    path('app', views.index),
+    path('', views.index),
 ]
